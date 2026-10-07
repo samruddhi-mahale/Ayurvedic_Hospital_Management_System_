@@ -1,0 +1,16 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environment and secrets
+.env
+application-local.properties
+
+# Logs
+*.log
+src/main/resources/application.properties

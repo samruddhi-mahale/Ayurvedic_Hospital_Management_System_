@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सदगुरू प.पू. मोरेदादा चॅरिटेबल हॉस्पिटल अँड मेडिकल ट्रस्ट, त्र्यंबकेश्वर &middot; Patient &amp; Treatment Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F1E4;
+    --paper-raised: #FCFAF3;
+    --green: #1F3D2B;
+    --green-soft: #2E5541;
+    --maroon: #7A1F3D;
+    --gold: #C08A28;
+    --ink: #3A2E20;
+    --ink-soft: #6B5F4F;
+    --line: #DCD3BE;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', 'Noto Sans Devanagari', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, .brand-word {
+    font-family: 'Fraunces', 'Noto Serif Devanagari', serif;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .app {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---------- Top banner ---------- */
+  .top-banner {
+    background: linear-gradient(180deg, #FBF3E4 0%, #F6EADD 100%);
+    border-bottom: 3px solid var(--maroon);
+    padding: 16px 40px 14px 40px;
+  }
+
+  .top-banner-row {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .banner-emblem { flex-shrink: 0; border-radius: 6px; object-fit: cover; background: #EFE9D8; }
+
+  .banner-text { flex: 1; text-align: center; }
+
+  .banner-invocation {
+    font-size: 12.5px;
+    color: var(--maroon);
+    letter-spacing: 0.04em;
+    margin-bottom: 2px;
+  }
+
+  .banner-hospital {
+    font-family: 'Fraunces', 'Noto Serif Devanagari', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .banner-tagline {
+    font-family: 'Fraunces', 'Noto Serif Devanagari', serif;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .banner-reg {
+    flex-shrink: 0;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .app-subbar {
+    background: var(--maroon);
+    color: #F6EADD;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding: 9px 10px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    width: 236px;
+    flex-shrink: 0;
+    background: var(--green);
+    color: #EFE9D8;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .mark svg { flex-shrink: 0; }
+
+  .mark-text {
+    font-family: 'Fraunces', serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #F6F1E4;
+    line-height: 1.25;
+  }
+
+  .mark-sub {
+    font-size: 10.5px;
+    color: #B9C4B4;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin: 4px 0 24px 0;
+    padding-left: 46px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 6px;
+  }
+
+  nav button {
+    all: unset;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    color: #D9D3BE;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  nav button:hover { background: rgba(255,255,255,0.06); color: #fff; }
+
+  nav button.active {
+    background: var(--paper-raised);
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  nav .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .sidebar-foot {
+    margin-top: auto;
+    font-size: 11px;
+    color: #93A08D;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 14px;
+  }
+
+  /* ---------- Main ---------- */
+  main {
+    flex: 1;
+    padding: 36px 44px;
+    max-width: 1100px;
+  }
+
+  .page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+
+  .page-head h1 { font-size: 24px; margin: 0 0 4px 0; }
+  .page-head p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+
+  .btn {
+    all: unset;
+    cursor: pointer;
+    background: var(--green);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--green-soft); }
+  .btn.gold { background: var(--gold); color: #2B1E08; }
+  .btn.gold:hover { background: #A9781F; }
+  .btn.ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .btn.ghost:hover { border-color: var(--ink-soft); }
+  .btn.danger-text {
+    background: transparent;
+    color: var(--maroon);
+    padding: 4px 8px;
+    font-size: 12.5px;
+  }
+  .btn.danger-text:hover { text-decoration: underline; }
+  .btn.small { padding: 6px 12px; font-size: 12.5px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th {
+    text-align: left;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    text-transform: none;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: #EFE8D4;
+  }
+
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13.5px;
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #FBF8EF; }
+
+  .empty-row td {
+    color: var(--ink-soft);
+    font-style: italic;
+    text-align: center;
+    padding: 26px;
+  }
+
+  .panel {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+  }
+
+  .panel h3 {
+    font-size: 15px;
+    margin: 0 0 16px 0;
+  }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 16px;
+  }
+
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field.span-2 { grid-column: span 2; }
+  .field.span-3 { grid-column: span 3; }
+
+  label {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  input, select, textarea {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 0;
+    border-color: var(--gold);
+  }
+
+  .panel-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .row-actions { display: flex; gap: 6px; }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #E6E0CC;
+    color: var(--ink-soft);
+  }
+
+  .badge.male { background: #DCE8DD; color: var(--green); }
+  .badge.female { background: #F1DCE3; color: var(--maroon); }
+
+  .exam-row, .item-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1.6fr 1.6fr 32px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .item-row { grid-template-columns: 1.6fr 0.7fr 0.9fr 32px; }
+
+  .exam-row .param-name, .item-row .type-name {
+    font-size: 13px;
+    color: var(--ink);
+    padding: 8px 0;
+  }
+
+  .remove-x {
+    all: unset;
+    cursor: pointer;
+    color: var(--maroon);
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .totals-strip {
+    display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+    padding-top: 14px;
+    margin-top: 8px;
+    border-top: 1px dashed var(--line);
+  }
+  .totals-strip .t-label { font-size: 12px; color: var(--ink-soft); }
+  .totals-strip .t-value { font-family: 'Fraunces', serif; font-size: 19px; color: var(--green); font-weight: 600; }
+
+  .toast {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    background: var(--green);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 13.5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    transform: translateY(12px);
+    opacity: 0;
+    transition: all 0.25s ease;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.error { background: var(--maroon); }
+
+  .conn-warning {
+    background: #F1DCE3;
+    color: var(--maroon);
+    border: 1px solid #E0B9C6;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: none;
+  }
+  .conn-warning.show { display: block; }
+
+  .master-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+
+  .add-inline {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .add-inline input { flex: 1; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <div class="top-banner-row">
+    <img class="banner-emblem" src="data:image/png;base64,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" width="66" height="66" alt="सदगुरू प.पू. मोरेदादा चॅरिटेबल हॉस्पिटल अँड मेडिकल ट्रस्ट, त्र्यंबकेश्वर logo"/>
+    <div class="banner-text">
+      <div class="banner-invocation">॥ श्री स्वामी समर्थ ॥</div>
+      <div class="banner-hospital">सदगुरू प.पू. मोरेदादा चॅरिटेबल हॉस्पिटल अँड मेडिकल ट्रस्ट, त्र्यंबकेश्वर</div>
+      <div class="banner-tagline">अध्यात्मिक व आयुर्वेदिक उपचार केंद्र</div>
+    </div>
+    <div class="banner-reg">(Reg. No. E-1322/Nashik)</div>
+  </div>
+</div>
+<div class="app-subbar">Ayurvedic Patient &amp; Treatment Management System</div>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="mark">
+      <img src="data:image/png;base64,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" width="34" height="34" style="border-radius:4px;flex-shrink:0;" alt="सदगुरू प.पू. मोरेदादा चॅरिटेबल हॉस्पिटल अँड मेडिकल ट्रस्ट, त्र्यंबकेश्वर logo"/>
+      <div class="mark-text">Patient &amp; Treatment<br>Register</div>
+    </div>
+    <div class="mark-sub">Trimbakeshwar Gurupeeth</div>
+
+    <nav>
+      <button class="nav-btn active" data-section="patients"><span class="dot"></span>Patients</button>
+      <button class="nav-btn" data-section="doctors"><span class="dot"></span>Doctors</button>
+      <button class="nav-btn" data-section="visits"><span class="dot"></span>Case Papers</button>
+      <button class="nav-btn" data-section="bills"><span class="dot"></span>Panchakarma Bills</button>
+      <button class="nav-btn" data-section="master"><span class="dot"></span>Master Data</button>
+    </nav>
+
+    <div class="sidebar-foot">Connected to<br>localhost:8080</div>
+  </aside>
+
+  <main>
+    <div class="conn-warning" id="connWarning">
+      Can't reach the API at <strong>localhost:8080</strong>. Make sure the Spring Boot app is running.
+    </div>
+
+    <!-- ===================== PATIENTS ===================== -->
+    <section class="section active" id="section-patients">
+      <div class="page-head">
+        <div>
+          <h1>Patients</h1>
+          <p>Everyone registered at the clinic</p>
+        </div>
+        <button class="btn" onclick="togglePanel('patientForm')">+ New patient</button>
+      </div>
+
+      <div class="panel" id="patientForm" style="display:none;">
+        <h3 id="patient-form-title">Register a patient</h3>
+        <div class="field-grid">
+          <div class="field"><label>Full name</label><input id="p-name" placeholder="e.g. Anita Deshmukh"></div>
+          <div class="field"><label>Gender</label>
+            <select id="p-gender"><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select>
+          </div>
+          <div class="field"><label>Age</label><input id="p-age" type="number" placeholder="e.g. 42"></div>
+          <div class="field"><label>Weight (kg)</label><input id="p-weight" type="number" step="0.1"></div>
+          <div class="field"><label>Height (cm)</label><input id="p-height" type="number" step="0.1"></div>
+          <div class="field"><label>Phone</label><input id="p-phone" placeholder="10-digit mobile"></div>
+          <div class="field span-3"><label>Address</label><input id="p-address" placeholder="Village / Taluka / District"></div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn gold" id="patient-save-btn" onclick="createPatient()">Save patient</button>
+          <button class="btn ghost" onclick="cancelPatientEdit()">Cancel</button>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Name</th><th>Gender</th><th>Age</th><th>Phone</th><th>Address</th><th></th></tr></thead>
+        <tbody id="patients-body"><tr class="empty-row"><td colspan="6">Loading…</td></tr></tbody>
+      </table>
+    </section>
+
+    <!-- ===================== DOCTORS ===================== -->
+    <section class="section" id="section-doctors">
+      <div class="page-head">
+        <div>
+          <h1>Doctors</h1>
+          <p>Attending physicians on record</p>
+        </div>
+        <button class="btn" onclick="togglePanel('doctorForm')">+ New doctor</button>
+      </div>
+
+      <div class="panel" id="doctorForm" style="display:none;">
+        <h3 id="doctor-form-title">Add a doctor</h3>
+        <div class="field-grid">
+          <div class="field"><label>Full name</label><input id="d-name" placeholder="e.g. Dr. Ramesh Joshi"></div>
+          <div class="field"><label>Specialization</label><input id="d-spec" placeholder="e.g. Panchakarma"></div>
+          <div class="field"><label>Contact number</label><input id="d-contact"></div>
+        </div>
+        <div class="panel-actions">
+          <button class="btn gold" id="doctor-save-btn" onclick="createDoctor()">Save doctor</button>
+          <button class="btn ghost" onclick="cancelDoctorEdit()">Cancel</button>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Name</th><th>Specialization</th><th>Contact</th><th></th></tr></thead>
+        <tbody id="doctors-body"><tr class="empty-row"><td colspan="4">Loading…</td></tr></tbody>
+      </table>
+    </section>
+
+    <!-- ===================== VISITS (Case Paper) ===================== -->
+    <section class="section" id="section-visits">
+      <div class="page-head">
+        <div>
+          <h1>Case Papers</h1>
+          <p>Examination records — Nadi, Jivha, Prakruti and the rest</p>
+        </div>
+        <button class="btn" onclick="openVisitForm()">+ New case paper</button>
+      </div>
+
+      <div class="panel" id="visitForm" style="display:none;">
+        <h3>New examination</h3>
+        <div class="field-grid" style="margin-bottom:18px;">
+          <div class="field"><label>Patient</label><select id="v-patient"></select></div>
+          <div class="field"><label>Doctor</label><select id="v-doctor"><option value="">— none —</option></select></div>
+          <div class="field"><label>Visit date</label><input id="v-date" type="date"></div>
+        </div>
+        <label style="display:block; margin-bottom:8px;">Examination findings</label>
+        <div id="exam-rows"></div>
+        <div class="panel-actions">
+          <button class="btn gold" onclick="createVisit()">Save case paper</button>
+          <button class="btn ghost" onclick="togglePanel('visitForm')">Cancel</button>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Findings recorded</th><th></th></tr></thead>
+        <tbody id="visits-body"><tr class="empty-row"><td colspan="5">Loading…</td></tr></tbody>
+      </table>
+    </section>
+
+    <!-- ===================== BILLS ===================== -->
+    <section class="section" id="section-bills">
+      <div class="page-head">
+        <div>
+          <h1>Panchakarma Bills</h1>
+          <p>Treatment slips — days, room, food, and total</p>
+        </div>
+        <button class="btn" onclick="openBillForm()">+ New bill</button>
+      </div>
+
+      <div class="panel" id="billForm" style="display:none;">
+        <h3>New billing slip</h3>
+        <div class="field-grid" style="margin-bottom:18px;">
+          <div class="field"><label>Patient</label><select id="b-patient"></select></div>
+          <div class="field"><label>Linked case paper (optional)</label><select id="b-visit"><option value="">— none —</option></select></div>
+          <div class="field"><label>Bill date</label><input id="b-date" type="date"></div>
+          <div class="field"><label>Room type</label><select id="b-room"></select></div>
+          <div class="field"><label>Food charge (₹)</label><input id="b-food" type="number" step="1" value="0"></div>
+        </div>
+
+        <label style="display:block; margin-bottom:8px;">Treatments given</label>
+        <div id="item-rows"></div>
+        <button class="btn ghost small" onclick="addItemRow()">+ Add treatment line</button>
+
+        <div class="totals-strip">
+          <div><span class="t-label">Estimated total&nbsp; </span><span class="t-value" id="bill-total">₹0</span></div>
+        </div>
+
+        <div class="panel-actions">
+          <button class="btn gold" onclick="createBill()">Save bill</button>
+          <button class="btn ghost" onclick="togglePanel('billForm')">Cancel</button>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Patient</th><th>Date</th><th>Room</th><th>Items</th><th>Total</th><th></th></tr></thead>
+        <tbody id="bills-body"><tr class="empty-row"><td colspan="6">Loading…</td></tr></tbody>
+      </table>
+    </section>
+
+    <!-- ===================== MASTER DATA ===================== -->
+    <section class="section" id="section-master">
+      <div class="page-head">
+        <div>
+          <h1>Master Data</h1>
+          <p>The fixed lists every form draws from</p>
+        </div>
+      </div>
+
+      <div class="master-cols">
+        <div>
+          <h3 style="font-size:14px; margin:0 0 10px 0;">Treatment types</h3>
+          <table><tbody id="tt-body"></tbody></table>
+          <div class="add-inline">
+            <input id="tt-new" placeholder="New treatment name">
+            <button class="btn small" onclick="addMaster('treatment-types', 'tt-new', loadTreatmentTypes)">Add</button>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:14px; margin:0 0 10px 0;">Examination parameters</h3>
+          <table><tbody id="ep-body"></tbody></table>
+          <div class="add-inline">
+            <input id="ep-new" placeholder="New parameter name">
+            <button class="btn small" onclick="addMaster('examination-parameters', 'ep-new', loadExamParams)">Add</button>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:14px; margin:0 0 10px 0;">Room types</h3>
+          <table><tbody id="rt-body"></tbody></table>
+          <div class="add-inline">
+            <input id="rt-new" placeholder="New room type">
+            <button class="btn small" onclick="addMaster('room-types', 'rt-new', loadRoomTypes)">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = 'http://localhost:8080/api';
+
+let patients = [], doctors = [], treatmentTypes = [], examParams = [], roomTypes = [], visits = [], bills = [];
+
+// ---------- utilities ----------
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => t.className = 'toast', 2400);
+}
+
+async function api(path, opts) {
+  try {
+    const res = await fetch(API + path, Object.assign({ headers: { 'Content-Type': 'application/json' } }, opts));
+    document.getElementById('connWarning').classList.remove('show');
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body.message || ('Request failed: ' + res.status));
+    }
+    if (res.status === 200 || res.status === 201) {
+      const text = await res.text();
+      return text ? JSON.parse(text) : null;
+    }
+    return null;
+  } catch (err) {
+    if (err instanceof TypeError) {
+      document.getElementById('connWarning').classList.add('show');
+    }
+    throw err;
+  }
+}
+
+function togglePanel(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+// ---------- nav ----------
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('section-' + btn.dataset.section).classList.add('active');
+  });
+});
+
+// ================= PATIENTS =================
+let editingPatientId = null;
+let editingDoctorId = null;
+
+async function loadPatients() {
+  try {
+    patients = await api('/patients') || [];
+    const body = document.getElementById('patients-body');
+    body.innerHTML = patients.length ? patients.map(p => `
+      <tr>
+        <td>${p.name}</td>
+        <td><span class="badge ${p.gender === 'Male' ? 'male' : p.gender === 'Female' ? 'female' : ''}">${p.gender}</span></td>
+        <td>${p.age ?? '—'}</td>
+        <td>${p.phone ?? '—'}</td>
+        <td>${p.address ?? '—'}</td>
+        <td class="row-actions"><button class="btn small" onclick="editPatient(${p.id})">Edit</button> <button class="btn danger-text" onclick="deletePatient(${p.id})">Delete</button></td>
+      </tr>`).join('') : `<tr class="empty-row"><td colspan="6">No patients registered yet.</td></tr>`;
+    fillPatientSelects();
+  } catch (e) { showToast(e.message, true); }
+}
+
+function fillPatientSelects() {
+  const opts = patients.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  document.getElementById('v-patient').innerHTML = opts || '<option value="">No patients yet</option>';
+  document.getElementById('b-patient').innerHTML = opts || '<option value="">No patients yet</option>';
+}
+
+async function createPatient() {
+  const name = document.getElementById('p-name').value.trim();
+  if (!name) return showToast('Patient name is required', true);
+  const payload = {
+    name,
+    gender: document.getElementById('p-gender').value,
+    age: numOrNull('p-age'),
+    weightKg: numOrNull('p-weight'),
+    heightCm: numOrNull('p-height'),
+    phone: document.getElementById('p-phone').value.trim(),
+    address: document.getElementById('p-address').value.trim()
+  };
+  try {
+    if (editingPatientId !== null) {
+      await api('/patients/' + editingPatientId, { method: 'PUT', body: JSON.stringify(payload) });
+      showToast('Patient updated');
+    } else {
+      await api('/patients', { method: 'POST', body: JSON.stringify(payload) });
+      showToast('Patient saved');
+    }
+    cancelPatientEdit();
+    await loadPatients();
+  } catch (e) { showToast(e.message, true); }
+}
+
+function editPatient(id) {
+  const p = patients.find(x => x.id === id);
+  if (!p) return showToast('Patient not found', true);
+  editingPatientId = id;
+  document.getElementById('p-name').value = p.name ?? '';
+  document.getElementById('p-gender').value = p.gender ?? 'Male';
+  document.getElementById('p-age').value = p.age ?? '';
+  document.getElementById('p-weight').value = p.weightKg ?? '';
+  document.getElementById('p-height').value = p.heightCm ?? '';
+  document.getElementById('p-phone').value = p.phone ?? '';
+  document.getElementById('p-address').value = p.address ?? '';
+  document.getElementById('patient-form-title').textContent = 'Edit patient';
+  document.getElementById('patient-save-btn').textContent = 'Update patient';
+  document.getElementById('patientForm').style.display = 'block';
+  document.getElementById('p-name').focus();
+}
+
+function cancelPatientEdit() {
+  editingPatientId = null;
+  document.getElementById('patient-form-title').textContent = 'Register a patient';
+  document.getElementById('patient-save-btn').textContent = 'Save patient';
+  ['p-name','p-age','p-weight','p-height','p-phone','p-address'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('p-gender').value = 'Male';
+  document.getElementById('patientForm').style.display = 'none';
+}
+
+async function deletePatient(id) {
+  if (!confirm('Delete this patient? This cannot be undone.')) return;
+  try { await api('/patients/' + id, { method: 'DELETE' }); showToast('Patient deleted'); await loadPatients(); }
+  catch (e) { showToast(e.message, true); }
+}
+
+function numOrNull(id) {
+  const v = document.getElementById(id).value;
+  return v === '' ? null : Number(v);
+}
+
+// ================= DOCTORS =================
+async function loadDoctors() {
+  try {
+    doctors = await api('/doctors') || [];
+    const body = document.getElementById('doctors-body');
+    body.innerHTML = doctors.length ? doctors.map(d => `
+      <tr>
+        <td>${d.name}</td><td>${d.specialization ?? '—'}</td><td>${d.contactNumber ?? '—'}</td>
+        <td class="row-actions"><button class="btn small" onclick="editDoctor(${d.id})">Edit</button> <button class="btn danger-text" onclick="deleteDoctor(${d.id})">Delete</button></td>
+      </tr>`).join('') : `<tr class="empty-row"><td colspan="4">No doctors added yet.</td></tr>`;
+    const opts = doctors.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
+    document.getElementById('v-doctor').innerHTML = '<option value="">— none —</option>' + opts;
+  } catch (e) { showToast(e.message, true); }
+}
+
+async function createDoctor() {
+  const name = document.getElementById('d-name').value.trim();
+  if (!name) return showToast('Doctor name is required', true);
+  const payload = {
+    name,
+    specialization: document.getElementById('d-spec').value.trim(),
+    contactNumber: document.getElementById('d-contact').value.trim()
+  };
+  try {
+    if (editingDoctorId !== null) {
+      await api('/doctors/' + editingDoctorId, { method: 'PUT', body: JSON.stringify(payload) });
+      showToast('Doctor updated');
+    } else {
+      await api('/doctors', { method: 'POST', body: JSON.stringify(payload) });
+      showToast('Doctor saved');
+    }
+    cancelDoctorEdit();
+    await loadDoctors();
+  } catch (e) { showToast(e.message, true); }
+}
+
+function editDoctor(id) {
+  const d = doctors.find(x => x.id === id);
+  if (!d) return showToast('Doctor not found', true);
+  editingDoctorId = id;
+  document.getElementById('d-name').value = d.name ?? '';
+  document.getElementById('d-spec').value = d.specialization ?? '';
+  document.getElementById('d-contact').value = d.contactNumber ?? '';
+  document.getElementById('doctor-form-title').textContent = 'Edit doctor';
+  document.getElementById('doctor-save-btn').textContent = 'Update doctor';
+  document.getElementById('doctorForm').style.display = 'block';
+  document.getElementById('d-name').focus();
+}
+
+function cancelDoctorEdit() {
+  editingDoctorId = null;
+  document.getElementById('doctor-form-title').textContent = 'Add a doctor';
+  document.getElementById('doctor-save-btn').textContent = 'Save doctor';
+  ['d-name','d-spec','d-contact'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('doctorForm').style.display = 'none';
+}
+
+async function deleteDoctor(id) {
+  if (!confirm('Delete this doctor?')) return;
+  try { await api('/doctors/' + id, { method: 'DELETE' }); showToast('Doctor deleted'); await loadDoctors(); }
+  catch (e) { showToast(e.message, true); }
+}
+
+// ================= MASTER DATA =================
+async function loadTreatmentTypes() {
+  treatmentTypes = await api('/treatment-types') || [];
+  document.getElementById('tt-body').innerHTML = treatmentTypes.map(t =>
+    `<tr><td>${t.name}</td></tr>`).join('') || '<tr class="empty-row"><td>None yet</td></tr>';
+}
+async function loadExamParams() {
+  examParams = await api('/examination-parameters') || [];
+  document.getElementById('ep-body').innerHTML = examParams.map(p =>
+    `<tr><td>${p.name}</td></tr>`).join('') || '<tr class="empty-row"><td>None yet</td></tr>';
+}
+async function loadRoomTypes() {
+  roomTypes = await api('/room-types') || [];
+  document.getElementById('rt-body').innerHTML = roomTypes.map(r =>
+    `<tr><td>${r.name}</td></tr>`).join('') || '<tr class="empty-row"><td>None yet</td></tr>';
+  document.getElementById('b-room').innerHTML = roomTypes.map(r => `<option value="${r.id}">${r.name}</option>`).join('');
+}
+
+async function addMaster(path, inputId, reload) {
+  const input = document.getElementById(inputId);
+  const name = input.value.trim();
+  if (!name) return;
+  try {
+    await api('/' + path, { method: 'POST', body: JSON.stringify({ name }) });
+    input.value = '';
+    showToast('Added');
+    await reload();
+  } catch (e) { showToast(e.message, true); }
+}
+
+// ================= VISITS (Case Papers) =================
+function openVisitForm() {
+  document.getElementById('exam-rows').innerHTML = examParams.map(p => `
+    <div class="exam-row" data-param="${p.id}">
+      <div class="param-name">${p.name}</div>
+      <input placeholder="Symptoms" class="exam-symptom">
+      <input placeholder="Treatment note" class="exam-note">
+      <span></span>
+    </div>`).join('');
+  document.getElementById('v-date').valueAsDate = new Date();
+  document.getElementById('visitForm').style.display = 'block';
+}
+
+async function createVisit() {
+  const patientId = Number(document.getElementById('v-patient').value);
+  if (!patientId) return showToast('Add a patient first', true);
+  const examinations = [];
+  document.querySelectorAll('#exam-rows .exam-row').forEach(row => {
+    const symptoms = row.querySelector('.exam-symptom').value.trim();
+    const note = row.querySelector('.exam-note').value.trim();
+    if (symptoms || note) {
+      examinations.push({ parameterId: Number(row.dataset.param), symptoms, treatmentNotes: note });
+    }
+  });
+  try {
+    await api('/visits', { method: 'POST', body: JSON.stringify({
+      patientId,
+      doctorId: document.getElementById('v-doctor').value ? Number(document.getElementById('v-doctor').value) : null,
+      visitDate: document.getElementById('v-date').value,
+      examinations
+    })});
+    showToast('Case paper saved');
+    togglePanel('visitForm');
+    loadVisits();
+  } catch (e) { showToast(e.message, true); }
+}
+
+async function loadVisits() {
+  try {
+    visits = await api('/visits') || [];
+    const body = document.getElementById('visits-body');
+    body.innerHTML = visits.length ? visits.map(v => `
+      <tr>
+        <td>${v.patient?.name ?? '—'}</td>
+        <td>${v.doctor?.name ?? '—'}</td>
+        <td>${v.visitDate}</td>
+        <td>${(v.examinations || []).length} parameters</td>
+        <td class="row-actions"><button class="btn danger-text" onclick="deleteVisit(${v.id})">Delete</button></td>
+      </tr>`).join('') : `<tr class="empty-row"><td colspan="5">No case papers recorded yet.</td></tr>`;
+    const opts = visits.map(v => `<option value="${v.id}">#${v.id} — ${v.patient?.name ?? ''} (${v.visitDate})</option>`).join('');
+    document.getElementById('b-visit').innerHTML = '<option value="">— none —</option>' + opts;
+  } catch (e) { showToast(e.message, true); }
+}
+
+async function deleteVisit(id) {
+  if (!confirm('Delete this case paper?')) return;
+  try { await api('/visits/' + id, { method: 'DELETE' }); showToast('Case paper deleted'); loadVisits(); }
+  catch (e) { showToast(e.message, true); }
+}
+
+// ================= BILLS =================
+function openBillForm() {
+  document.getElementById('item-rows').innerHTML = '';
+  addItemRow();
+  document.getElementById('b-date').valueAsDate = new Date();
+  document.getElementById('b-food').value = 0;
+  updateBillTotal();
+  document.getElementById('billForm').style.display = 'block';
+}
+
+function addItemRow() {
+  const div = document.createElement('div');
+  div.className = 'item-row';
+  const options = treatmentTypes.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+  div.innerHTML = `
+    <select class="item-type">${options}</select>
+    <input type="number" class="item-days" placeholder="Days" min="0" value="1">
+    <input type="number" class="item-amount" placeholder="Amount ₹" min="0" value="0">
+    <button class="remove-x" onclick="this.closest('.item-row').remove(); updateBillTotal();">✕</button>`;
+  document.getElementById('item-rows').appendChild(div);
+  div.querySelectorAll('input').forEach(inp => inp.addEventListener('input', updateBillTotal));
+  updateBillTotal();
+}
+
+function updateBillTotal() {
+  let total = 0;
+  document.querySelectorAll('#item-rows .item-row').forEach(row => {
+    total += Number(row.querySelector('.item-amount').value || 0);
+  });
+  total += Number(document.getElementById('b-food').value || 0);
+  document.getElementById('bill-total').textContent = '₹' + total.toLocaleString('en-IN');
+}
+document.getElementById('b-food').addEventListener('input', updateBillTotal);
+
+async function createBill() {
+  const patientId = Number(document.getElementById('b-patient').value);
+  if (!patientId) return showToast('Add a patient first', true);
+  const items = [];
+  document.querySelectorAll('#item-rows .item-row').forEach(row => {
+    items.push({
+      treatmentTypeId: Number(row.querySelector('.item-type').value),
+      days: Number(row.querySelector('.item-days').value || 0),
+      amount: Number(row.querySelector('.item-amount').value || 0)
+    });
+  });
+  try {
+    await api('/bills', { method: 'POST', body: JSON.stringify({
+      patientId,
+      visitId: document.getElementById('b-visit').value ? Number(document.getElementById('b-visit').value) : null,
+      roomTypeId: document.getElementById('b-room').value ? Number(document.getElementById('b-room').value) : null,
+      billDate: document.getElementById('b-date').value,
+      foodCharge: Number(document.getElementById('b-food').value || 0),
+      items
+    })});
+    showToast('Bill saved');
+    togglePanel('billForm');
+    loadBills();
+  } catch (e) { showToast(e.message, true); }
+}
+
+async function loadBills() {
+  try {
+    bills = await api('/bills') || [];
+    const body = document.getElementById('bills-body');
+    body.innerHTML = bills.length ? bills.map(b => `
+      <tr>
+        <td>${b.patient?.name ?? '—'}</td>
+        <td>${b.billDate}</td>
+        <td>${b.roomType?.name ?? '—'}</td>
+        <td>${(b.treatmentItems || []).length} items</td>
+        <td>₹${(b.totalAmount ?? 0).toLocaleString('en-IN')}</td>
+        <td class="row-actions"><button class="btn danger-text" onclick="deleteBill(${b.id})">Delete</button></td>
+      </tr>`).join('') : `<tr class="empty-row"><td colspan="6">No bills recorded yet.</td></tr>`;
+  } catch (e) { showToast(e.message, true); }
+}
+
+async function deleteBill(id) {
+  if (!confirm('Delete this bill?')) return;
+  try { await api('/bills/' + id, { method: 'DELETE' }); showToast('Bill deleted'); loadBills(); }
+  catch (e) { showToast(e.message, true); }
+}
+
+// ================= INIT =================
+(async function init() {
+  await Promise.all([loadTreatmentTypes(), loadExamParams(), loadRoomTypes()]);
+  await Promise.all([loadPatients(), loadDoctors()]);
+  await Promise.all([loadVisits(), loadBills()]);
+})();
+</script>
+
+</body>
+</html>
