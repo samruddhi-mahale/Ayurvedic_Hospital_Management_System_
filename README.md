@@ -2,9 +2,33 @@
 
 **Java · Spring Boot · MySQL · REST API · HTML/CSS/JavaScript**
 
+<p>
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white" alt="Java 17">
+  <img src="https://img.shields.io/badge/Spring%20Boot-3.2.5-6DB33F?style=for-the-badge&amp;logo=springboot&amp;logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&amp;logo=mysql&amp;logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&amp;logo=apachemaven&amp;logoColor=white" alt="Apache Maven">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&amp;logo=html5&amp;logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&amp;logo=css3&amp;logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&amp;logo=javascript&amp;logoColor=black" alt="JavaScript">
+</p>
+
 ## Overview
 
 Ayurveda Hospital Management System is a full-stack hospital workflow application for managing patients, doctors, case papers, examinations, Panchakarma treatments, and billing. The Spring Boot backend exposes REST APIs backed by MySQL, while the included browser interface supports the day-to-day hospital workflow.
+
+## Application Screenshots
+
+### Patient Registration
+
+<img src="screenshots/patient-registration.png" alt="Patient registration screen" width="900">
+
+### Case Papers
+
+<img src="screenshots/case-papers.png" alt="Case paper and examination screen" width="900">
+
+### Panchakarma Bills
+
+<img src="screenshots/panchakarma-bills.png" alt="Panchakarma billing screen" width="900">
 
 ## Features
 
